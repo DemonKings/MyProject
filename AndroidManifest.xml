@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.yonghuzhuce"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/wei"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.yonghuzhuce.MainActivity"
+            android:label="用户注册" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.yonghuzhuce.Activity1"
+            android:label="展示用户信息" >
+        </activity>
+        <activity
+            android:name="com.example.yonghuzhuce.Activity2"
+            android:label="登陆界面" >
+        </activity>
+        
+    </application>
+
+</manifest>
