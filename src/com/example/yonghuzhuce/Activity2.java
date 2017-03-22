@@ -20,7 +20,7 @@ public class Activity2 extends Activity {
 		
 		String yhm=ed_yhm.getText().toString().trim();
 		String mm=ed_mm.getText().toString().trim();
-		
+		// 判断所输入内容是否一致。 注意：对象不同，不能用"=="
 		if((yhm.contentEquals("lidengming")&&mm.contentEquals("139")) ||
 				(yhm.contentEquals("weitong")&&mm.contentEquals("142")) ||
 				(yhm.contentEquals("zhaoxuechen")&&mm.contentEquals("140"))
@@ -29,7 +29,7 @@ public class Activity2 extends Activity {
 	    	intent.putExtra("mm",ed_mm.getText().toString().trim());
 	    	startActivity(intent);
 		}else{
-			(Toast.makeText(Activity2.this,"账号或密码错误",Toast.LENGTH_LONG)).show();
+			(Toast.makeText(Activity2.this,"账号或密码错误",Toast.LENGTH_LONG)).show();//创建弹出窗体
 		}
 
     }

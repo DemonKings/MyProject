@@ -16,7 +16,7 @@ public class Activity3 extends Activity {
         String mm=intent.getStringExtra("mm");
         im =(ImageView) findViewById(R.id.imageView1);
         if(mm.contentEquals("142")){
-        	im.setImageResource(R.drawable.wei);
+        	im.setImageResource(R.drawable.wei);//变更图片源文件
         }else if(mm.contentEquals("140")){
         	im.setImageResource(R.drawable.lei);
         }
