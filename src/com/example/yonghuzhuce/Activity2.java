@@ -27,10 +27,10 @@ public class Activity2 extends Activity {
 		){
 	    	Intent intent=new Intent(this,Activity3.class);
 	    	intent.putExtra("mm",ed_mm.getText().toString().trim());
+	    	intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 	    	startActivity(intent);
 		}else{
 			(Toast.makeText(Activity2.this,"账号或密码错误",Toast.LENGTH_LONG)).show();//创建弹出窗体
 		}
-
     }
 }
