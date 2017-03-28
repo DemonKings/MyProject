@@ -81,13 +81,4 @@
         android:onClick="click"
         android:text="返    回" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignRight="@+id/textView7"
-        android:onClick="cl"
-        android:text="登    陆" />
-
 </RelativeLayout>

@@ -152,16 +152,6 @@
         android:text="读书"
         android:textSize="14dp" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/CheckBox01"
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:onClick="Click"
-        android:text="注    册" />
-
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
@@ -212,5 +202,25 @@
         android:layout_below="@+id/button1"
         android:layout_marginTop="25dp"
         android:src="@drawable/deng" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/EditText02"
+        android:layout_below="@+id/CheckBox01"
+        android:layout_marginTop="18dp"
+        android:onClick="Click"
+        android:text="注    册" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_alignRight="@+id/textView5"
+        android:onClick="cl"
+        android:text="登    陆" />
 
 </RelativeLayout>
