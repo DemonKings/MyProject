@@ -26,6 +26,11 @@
             android:name="com.example.yonghuzhuce.Activity1"
             android:label="展示用户信息" >
         </activity>
+        <service
+            android:name="com.example.yonghuzhuce.yypService"
+            android:exported="true"
+            android:process=":remote">
+        </service>  
     </application>
 
 </manifest>

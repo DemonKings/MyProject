@@ -9,53 +9,46 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textViewmm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="密      码 ：" />
-
-    <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewmm"
-        android:layout_below="@+id/etyhm"
-        android:layout_marginTop="56dp"
         android:text="用  户  名 :" />
-
+    
     <EditText
         android:id="@+id/etyhm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/textViewmm"
+        android:layout_toRightOf="@+id/textView"
         android:ems="10"
-        android:hint="请输入您的用户名" >
-
-        <requestFocus />
-    </EditText>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/textViewmm"
-        android:onClick="Click"
-        android:text="登    陆" />
+        android:hint="请输入您的用户名" />
 
     <EditText
         android:id="@+id/etmm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignLeft="@+id/etyhm"
-        android:layout_marginLeft="40dp"
+        android:layout_alignBaseline="@+id/textViewmm"
+        android:layout_alignBottom="@+id/textViewmm"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/textViewmm"
         android:ems="10"
         android:hint="请输入密码"
-        android:inputType="textPassword"
-        android:textSize="14dp" />
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/textViewmm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etyhm"
+        android:layout_marginTop="38dp"
+        android:text="密      码 ：" />
+
+    <Button
+        android:id="@+id/bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etmm"
+        android:layout_centerVertical="true"
+        android:onClick="Click"
+        android:text="登    陆" />
 
 </RelativeLayout>

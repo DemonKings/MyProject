@@ -74,7 +74,25 @@ public class Activity1 extends Activity {
 	        	  }
       	  }
         }.start();
+        
+        Intent intent1 = new Intent(Activity1.this,yypService.class);  
+        startService(intent1);  
     }
     
+    @Override  
+    protected void onStop() {  
+        // TODO Auto-generated method stub  
+        Intent intent = new Intent(Activity1.this,yypService.class);  
+        stopService(intent);  
+        super.onStop();  
+    }  
+    
+    @Override
+	public void onBackPressed() {  
+        // TODO Auto-generated method stub  
+        Intent intent = new Intent(Activity1.this,yypService.class);  
+        stopService(intent);  
+        super.onBackPressed();  
+    }  
 	
 }

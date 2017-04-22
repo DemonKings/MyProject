@@ -2,8 +2,6 @@ package com.example.yonghuzhuce;
 
 import java.io.IOException;
 
-import javax.security.auth.callback.Callback;
-
 import com.google.gson.Gson;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
@@ -16,13 +14,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -45,10 +40,10 @@ public class MainActivity extends Activity {
         //找到对象
         et_yhm =(EditText) findViewById(R.id.etyhm);
         et_mm =(EditText) findViewById(R.id.etmm);
+        button2 = (Button) findViewById(R.id.bt);
     }
     //传递数据
     public void Click(View view) throws IOException{
-    	button2 = (Button) findViewById(R.id.button2);
     	button2.setVisibility(View.INVISIBLE);
     	// Intent intent=new Intent(this,Activity1.class); //创建Intent对象
     	String syhm = et_yhm.getText().toString().trim();
@@ -77,14 +72,16 @@ public class MainActivity extends Activity {
                     response = client.newCall(request).execute();
                     if (response.isSuccessful()) {
                     	Res res = gson.fromJson(response.body().charStream(), Res.class);
-                      
-                        //使用Hanlder发送消息
                         Message msg = Message.obtain();
-                      
-                        msg.what = SUCCESS;
-                        msg.obj = res;
-                      
-                        handler.sendMessage(msg);
+                        
+                        if(res.message.equals("ok")){
+                        	msg.what = SUCCESS;
+                            msg.obj = res;
+                            handler.sendMessage(msg);
+                        }else{
+                        	msg.what = ERROR;
+                            handler.sendMessage(msg);
+                        }
                     } else {
                         throw new IOException("Unexpected code " + response);
                     }
@@ -93,7 +90,6 @@ public class MainActivity extends Activity {
                     //失败
                     Message msg = Message.obtain();
                     msg.what = ERROR;
-                  
                     handler.sendMessage(msg);
                 }
             }
@@ -111,11 +107,11 @@ public class MainActivity extends Activity {
     		switch (msg.what){
     			case SUCCESS:
     				resss = (Res)msg.obj;
-    				Toast.makeText(MainActivity.this, resss.img, Toast.LENGTH_SHORT).show();
+    				Toast.makeText(MainActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
     				jump();
     				break;
     			case ERROR:
-    				Toast.makeText(MainActivity.this, "账号或密码", Toast.LENGTH_SHORT).show();
+    				Toast.makeText(MainActivity.this, "账号或密码错误", Toast.LENGTH_SHORT).show();
     				break;
     			}
     	}
