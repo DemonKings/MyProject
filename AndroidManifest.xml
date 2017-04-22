@@ -3,7 +3,7 @@
     package="com.example.yonghuzhuce"
     android:versionCode="1"
     android:versionName="1.0" >
-
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
@@ -26,14 +26,6 @@
             android:name="com.example.yonghuzhuce.Activity1"
             android:label="展示用户信息" >
         </activity>
-        <activity
-            android:name="com.example.yonghuzhuce.Activity2"
-            android:label="登陆界面" >
-        </activity>
-        <activity
-            android:name="com.example.yonghuzhuce.Activity3"
-            android:label="登陆成功界面" >
-        </activity>     
     </application>
 
 </manifest>

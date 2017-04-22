@@ -1,75 +1,80 @@
 package com.example.yonghuzhuce;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.shujuku.MyHelper;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.ResponseBody;
 
 public class Activity1 extends Activity {
 	//定义
-	private MyHelper helper;
-	private EditText editText1;
-	private TextView textView4,textView5,textView7;
-	private EditText extra_yhm;
-	private TextView extra_mm,extra_xb;
+	private ImageView vv;
+	private static final int ERROR = 1;
+	private static final int SUCCESS = 2 ;
+	
+	private Handler handler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what){
+				case SUCCESS:
+					vv.setImageBitmap((Bitmap) msg.obj);
+					break;
+				case ERROR:
+					Toast.makeText(Activity1.this, "请求超时", Toast.LENGTH_SHORT).show();
+					break;
+			}
+    	}
+	};
+	
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity1);
-        
-        helper = new MyHelper(this);
-        
-        //获取Intent对象
+        vv = (ImageView)findViewById(R.id.imageView1);
+      
         Intent intent=getIntent();
-        //取出key对应的值
-        String yhm=intent.getStringExtra("yhm");
-        String mm=intent.getStringExtra("mm");
-        String xb=intent.getStringExtra("xb");
-        String cg=intent.getStringExtra("cg");
-        String tw=intent.getStringExtra("tw");
-        String ds=intent.getStringExtra("ds");
-        String yy=intent.getStringExtra("yy");
-        //找到控件
-        editText1=(EditText) findViewById(R.id.editText1);
-        textView4=(TextView) findViewById(R.id.textView4);
-        textView5=(TextView) findViewById(R.id.textView5);
-        textView7=(TextView) findViewById(R.id.textView7);
-        //写入内容
-        editText1.setText(yhm);
-        textView4.setText(mm);
-        textView5.setText(xb);
-        textView7.setText(cg+" "+tw+" "+ds+" "+yy);     
+        final String url = intent.getStringExtra("url");
+        
+        new Thread(){
+        	@Override
+      	  public void run() {
+      	  //获取okHttp对象get请求,
+	        	  try {
+	        		  OkHttpClient client = new OkHttpClient();
+	        		  Request request = new Request.Builder().url(url).build();
+	        		  // ResponseBody body = client.newCall(request).execute().body();
+	        		  InputStream in = client.newCall(request).execute().body().byteStream();
+	        		  Bitmap bitmap = BitmapFactory.decodeStream(in);
+	        		  Message msg = Message.obtain();
+	        	 
+	        		  msg.what = SUCCESS;
+	        		  msg.obj = bitmap;
+	        		  handler.sendMessage(msg);
+	        	  } catch (IOException e) {
+	        		  e.printStackTrace();
+	        		  Message msg = Message.obtain();
+	        		  msg.what = ERROR;
+	        		  handler.sendMessage(msg);
+	        	  }
+      	  }
+        }.start();
     }
-    // 单击时间名字“click”应与该控件onClick值一致
-    public void click(View view){    //创建单击事件  回传数据
-    	
-    	extra_yhm =(EditText) findViewById(R.id.editText1);
-    	extra_mm =(TextView) findViewById(R.id.textView4);
-    	extra_xb =(TextView) findViewById(R.id.textView5);
-    	Intent intent =new Intent(); //创建Intent对象
-    	intent.putExtra("extra_data",extra_yhm.getText().toString().trim());
-    	setResult(1,intent);
-    	String yhm=extra_yhm.getText().toString().trim();
-    	String mm=extra_mm.getText().toString().trim();
-    	String xb=extra_xb.getText().toString().trim();
-    	add(yhm, mm, xb);
-    	finish();  //销毁activity
-    	
-    }
-    public long add(String yhm,String mm,String xb){
-		SQLiteDatabase db=helper.getWritableDatabase();
-		ContentValues values=new ContentValues();
-		values.put("yhm", yhm);
-		values.put("mm", mm);
-		values.put("xb", xb);
-		long id=db.insert("info", null, values);
-		db.close();
-		return id;
-	}
-
+    
+	
 }

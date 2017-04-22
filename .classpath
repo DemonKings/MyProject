@@ -5,5 +5,8 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="D:/Eclipse/adt-bundle-windows-x86-20131030/Project/Yonghuzhuce/libs/okhttp-2.7.5.jar"/>
+	<classpathentry kind="lib" path="D:/Eclipse/adt-bundle-windows-x86-20131030/Project/Yonghuzhuce/libs/okio-1.12.0.jar"/>
+	<classpathentry kind="lib" path="D:/Eclipse/adt-bundle-windows-x86-20131030/Project/Yonghuzhuce/libs/gson-2.8.0.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

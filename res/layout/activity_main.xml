@@ -9,218 +9,53 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textViewmm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="53dp"
-        android:text="用  户  名 :" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/textView2"
-        android:ems="10"
-        android:hint="请输入您的用户名"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
         android:layout_marginTop="15dp"
         android:text="密      码 ：" />
 
-    <EditText
-        android:id="@+id/EditText01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/editText1"
-        android:ems="10"
-        android:hint="请输入密码"
-        android:inputType="textPassword"
-        android:textSize="14dp" />
-
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="15dp"
-        android:text="确认密码：" />
+        android:layout_alignLeft="@+id/textViewmm"
+        android:layout_below="@+id/etyhm"
+        android:layout_marginTop="56dp"
+        android:text="用  户  名 :" />
 
     <EditText
-        android:id="@+id/EditText02"
+        android:id="@+id/etyhm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textViewmm"
         android:ems="10"
-        android:hint="请确认您的密码"
-        android:inputType="textPassword"
-        android:textSize="14dp" />
+        android:hint="请输入您的用户名" >
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="15dp"
-        android:text="性      别 ：" />
-
-    <CheckBox
-        android:id="@+id/CheckBox03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/checkBox1"
-        android:layout_alignBottom="@+id/checkBox1"
-        android:layout_toRightOf="@+id/checkBox1"
-        android:text="跳舞"
-        android:textSize="14dp" />
-
-    <CheckBox
-        android:id="@+id/CheckBox01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/CheckBox02"
-        android:layout_alignBottom="@+id/CheckBox02"
-        android:layout_toRightOf="@+id/CheckBox02"
-        android:text="游泳"
-        android:textSize="14dp" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/EditText02"
-        android:layout_alignTop="@+id/textView3"
-        android:orientation="horizontal"
-        android:contentDescription="性别" >
-
-        <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/radioButton0"
-            android:text="男" />
-
-        <RadioButton
-            android:id="@+id/radioButton01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/radioButton1"
-            android:text="女" />
-    </RadioGroup>
-
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/radioGroup"
-        android:layout_alignTop="@+id/TextView01"
-        android:text="唱歌"
-        android:textSize="14dp" />
-
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="15dp"
-        android:text="兴趣爱好：" />
-
-    <CheckBox
-        android:id="@+id/CheckBox02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/CheckBox03"
-        android:layout_toLeftOf="@+id/CheckBox03"
-        android:text="读书"
-        android:textSize="14dp" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView2"
-        android:layout_alignLeft="@+id/TextView01"
-        android:src="@drawable/lei" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_below="@+id/imageView1"
-        android:layout_marginTop="14dp"
-        android:text="赵雪辰140" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView5"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_alignLeft="@+id/CheckBox02"
-        android:text="李登铭139" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView5"
-        android:layout_toRightOf="@+id/radioGroup"
-        android:src="@drawable/wei" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignRight="@+id/imageView3"
-        android:text="魏通142" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignRight="@+id/CheckBox02"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/deng" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/EditText02"
-        android:layout_below="@+id/CheckBox01"
-        android:layout_marginTop="18dp"
-        android:onClick="Click"
-        android:text="注    册" />
+        <requestFocus />
+    </EditText>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignRight="@+id/textView5"
-        android:onClick="cl"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textViewmm"
+        android:onClick="Click"
         android:text="登    陆" />
+
+    <EditText
+        android:id="@+id/etmm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignLeft="@+id/etyhm"
+        android:layout_marginLeft="40dp"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:textSize="14dp" />
 
 </RelativeLayout>
